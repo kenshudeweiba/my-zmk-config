@@ -3,10 +3,15 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    // 必须添加：LT长短按参数定义，否则&lt会解析报错
+    &lt {
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        // 0层 基础层
         layer_0 {
             bindings = <
                 &kp ESC    &kp Q      &kp W    &kp E     &kp R        &kp T     &kp Y         &kp U     &kp I     &kp O    &kp P     &kp BSPC
@@ -16,7 +21,6 @@
             >;
         };
 
-        // 1层 数字方向层
         layer_1 {
             bindings = <
                 &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
@@ -26,7 +30,6 @@
             >;
         };
 
-        // 2层 F功能键层
         layer_2 {
             bindings = <
                 &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
