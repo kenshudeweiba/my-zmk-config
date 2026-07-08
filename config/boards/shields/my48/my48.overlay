@@ -53,6 +53,7 @@
     // 物理布局定义
     physical_layout: physical_layout {
         compatible = "zmk,physical-layout";
+        display-name = "My48 Keyboard";  // ✨ 核心修复：在这里加上了 display-name
         transform = <&default_transform>;
         kscan = <&kscan0>;
     };
