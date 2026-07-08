@@ -1,20 +1,40 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    // 1. LT长短按配置（之前要求挪到overlay的）
+    // LT 长短按配置
     &lt {
         tapping-term-ms = <200>;
         quick-tap-ms = <200>;
     };
 
-    // 2. 你的GPIO矩阵扫描 kscan0（你原本的行、列引脚代码保留这里）
+    // ========== 这里粘贴你自己的 kscan0 行列引脚配置 ==========
     &kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
         diode-direction = "col2row";
-        // 这里放你自己的 col-gpios、row-gpios、消抖参数
+        col-gpios =
+            <&pro_micro 4 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 5 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 6 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 7 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 8 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 9 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 10 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 11 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 12 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 13 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 14 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 15 GPIO_ACTIVE_HIGH>;
+        row-gpios =
+            <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&pro_micro 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        debounce-press-ms = <5>;
+        debounce-release-ms = <5>;
     };
 
-    // 3. 你现在的 matrix-transform 矩阵映射代码
+    // 矩阵转换映射（无额外 / { } 包裹，直接写在根里）
     chosen {
         zmk,matrix-transform = &default_transform;
     };
@@ -23,7 +43,6 @@
         compatible = "zmk,matrix-transform";
         rows = <4>;
         columns = <12>;
-
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
             RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
