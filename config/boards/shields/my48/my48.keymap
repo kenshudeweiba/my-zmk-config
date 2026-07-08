@@ -3,12 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    // 必须添加：LT长短按参数定义，否则&lt会解析报错
-    &lt {
-        tapping-term-ms = <200>;
-        quick-tap-ms = <200>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
