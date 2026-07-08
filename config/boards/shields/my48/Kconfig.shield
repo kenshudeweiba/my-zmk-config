@@ -1,2 +1,3 @@
 config SHIELD_MY48
-    def_bool $(shields_list_contains,my48)
+    bool "My 48 keyboard shield"
+    depends on ARDUINO_PRO_MICRO || BOARD_NICE_NANO_V2 # 根据你的底板调整
