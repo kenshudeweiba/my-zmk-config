@@ -19,8 +19,8 @@
             bindings = <
                 &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp DEL
                 &kp CAPS &none &none &none &none &none &kp LGUI &kp LEFT &kp DOWN &kp RIGHT &none &kp ENTER
-                &none &none &none &none &none &none &none &none &none &none &none &none
-                &none &kp RBRC &none &none &trans &none &trans &none &none &none &none &none
+                &trans &none &none &none &none &none &none &none &none &none &none &trans
+                &trans &kp RBRC &trans &none &trans &none &trans &trans &none &none &none &trans
             >;
         };
 
@@ -28,8 +28,8 @@
             bindings = <
                 &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
                 &none &kp F11 &kp F12 &none &none &none &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-                &none &out OUT_TOG &none &none &none &none &none &none &none &none &none &none
-                &none &none &none &none &trans &none &trans &none &none &none &none &none
+                &trans &out OUT_USB &out OUT_BLE &none &none &none &kp C_VOL_UP &kp C_VOL_DN &none &none &bootloader &trans
+                &trans &none &trans &none &trans &none &trans &trans &none &none &none &trans
             >;
         };
     };
