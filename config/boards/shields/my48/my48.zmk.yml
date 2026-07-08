@@ -1,0 +1,12 @@
+file_format: "1"
+id: my48
+name: My 48 Keyboard
+type: shield
+url: https://github.com/kenshudeweiba/my-zmk-config # 可以换成你自己的仓库地址
+requires: [pro_micro] # 声明需要 pro_micro 类型的底板（如 nice_nano_v2）
+features:
+  - keys       # 声明这是一个键盘
+exposes:       # 这里可以留空，或者声明 exposed 的引脚（通常不需要）
+siblings:
+  - my48_left  # 如果是分体键盘，这里需要写左右名字；如果是单块，这行删掉
+  - my48_right # 如果是单块键盘，请把这两行 siblings 删掉
