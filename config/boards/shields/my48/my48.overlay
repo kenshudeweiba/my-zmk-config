@@ -2,23 +2,13 @@
 #include <dt-bindings/gpio/gpio.h>
 
 / {
-    // 补充 Layer Tap 行为定义（解决 parse error 报错的核心）
-    behaviors {
-        lt: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-    };
+    // ⚠️ 不要在这里自定义 lt 行为，ZMK 系统已内置 &lt，自定义会导致 keymap 解析崩溃！
 
     // 键盘扫描矩阵配置（完全保留你提供的引脚）
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
-        diode-direction = "col2row"; // 二极管方向：列到行
+        diode-direction = "col2row"; 
         
         // 列引脚 (Cols 0-11)
         col-gpios = 
