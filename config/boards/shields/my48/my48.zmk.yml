@@ -6,3 +6,4 @@ url: https://github.com/kenshudeweiba/my-zmk-config
 requires: [pro_micro]
 features:
   - keys
+  - studio
