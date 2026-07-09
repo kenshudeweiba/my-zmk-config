@@ -115,28 +115,6 @@
         };
     };
 
-    led_indicators {
-        compatible = "zmk,led-indicators";
-        bt_indicator: led_indicator_0 {
-            compatible = "zmk,led-indicator";
-            led = <&bt_led>;
-            triggers {
-                bt_connected: trigger_0 {
-                    trigger = "ZMK_LED_INDICATOR_TRIGGER_BT_CONNECTED";
-                    led-state = <1>;
-                };
-                bt_disconnected: trigger_1 {
-                    trigger = "ZMK_LED_INDICATOR_TRIGGER_BT_DISCONNECTED";
-                    led-state = <0>;
-                };
-                bt_advertising: trigger_2 {
-                    trigger = "ZMK_LED_INDICATOR_TRIGGER_BT_ADVERTISING";
-                    led-state = <2>;
-                };
-            };
-        };
-    };
-
     chosen {
         zmk,physical-layout = &physical_layout;
     };
