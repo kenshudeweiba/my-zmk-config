@@ -2,46 +2,39 @@
 #include <dt-bindings/gpio/gpio.h>
 
 / {
-    // ⚠️ 不要在这里自定义 lt 行为，ZMK 系统已内置 &lt，自定义会导致 keymap 解析崩溃！
-
-    // 键盘扫描矩阵配置（完全保留你提供的引脚）
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
-        diode-direction = "col2row"; 
-        
-        // 列引脚 (Cols 0-11)
-        col-gpios = 
-            <&gpio0 22 GPIO_ACTIVE_HIGH>,  // P0_22
-            <&gpio0 24 GPIO_ACTIVE_HIGH>,  // P0_24
-            <&gpio1  0 GPIO_ACTIVE_HIGH>,  // P1_00
-            <&gpio0 11 GPIO_ACTIVE_HIGH>,  // P0_11
-            <&gpio1  4 GPIO_ACTIVE_HIGH>,  // P1_04
-            <&gpio1  6 GPIO_ACTIVE_HIGH>,  // P1_06
-            <&gpio0 31 GPIO_ACTIVE_HIGH>,  // P0_31
-            <&gpio0 29 GPIO_ACTIVE_HIGH>,  // P0_29
-            <&gpio0  2 GPIO_ACTIVE_HIGH>,  // P0_02
-            <&gpio1 15 GPIO_ACTIVE_HIGH>,  // P1_15
-            <&gpio1 13 GPIO_ACTIVE_HIGH>,  // P1_13
-            <&gpio1 11 GPIO_ACTIVE_HIGH>;  // P1_11
+        diode-direction = "col2row";
 
-        // 行引脚 (Rows 0-3)
-        row-gpios = 
-            <&gpio0  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // P0_06
-            <&gpio0  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // P0_08
-            <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>, // P0_17
-            <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // P0_20
+        col-gpios =
+            <&gpio0 22 GPIO_ACTIVE_HIGH>,
+            <&gpio0 24 GPIO_ACTIVE_HIGH>,
+            <&gpio1 0 GPIO_ACTIVE_HIGH>,
+            <&gpio0 11 GPIO_ACTIVE_HIGH>,
+            <&gpio1 4 GPIO_ACTIVE_HIGH>,
+            <&gpio1 6 GPIO_ACTIVE_HIGH>,
+            <&gpio0 31 GPIO_ACTIVE_HIGH>,
+            <&gpio0 29 GPIO_ACTIVE_HIGH>,
+            <&gpio0 2 GPIO_ACTIVE_HIGH>,
+            <&gpio1 15 GPIO_ACTIVE_HIGH>,
+            <&gpio1 13 GPIO_ACTIVE_HIGH>,
+            <&gpio1 11 GPIO_ACTIVE_HIGH>;
+
+        row-gpios =
+            <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
         debounce-press-ms = <5>;
         debounce-release-ms = <5>;
     };
 
-    // 矩阵变换 (Matrix Transform) - 完全保留你指定的 Map
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         rows = <4>;
         columns = <12>;
-        
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
             RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
@@ -50,12 +43,98 @@
         >;
     };
 
-    // 物理布局定义
+    key_xy_0: key_xy_0 { x = <0>; y = <0>; };
+    key_xy_1: key_xy_1 { x = <19>; y = <0>; };
+    key_xy_2: key_xy_2 { x = <38>; y = <0>; };
+    key_xy_3: key_xy_3 { x = <57>; y = <0>; };
+    key_xy_4: key_xy_4 { x = <76>; y = <0>; };
+    key_xy_5: key_xy_5 { x = <95>; y = <0>; };
+    key_xy_6: key_xy_6 { x = <114>; y = <0>; };
+    key_xy_7: key_xy_7 { x = <133>; y = <0>; };
+    key_xy_8: key_xy_8 { x = <152>; y = <0>; };
+    key_xy_9: key_xy_9 { x = <171>; y = <0>; };
+    key_xy_10: key_xy_10 { x = <190>; y = <0>; };
+    key_xy_11: key_xy_11 { x = <209>; y = <0>; };
+    key_xy_12: key_xy_12 { x = <0>; y = <19>; };
+    key_xy_13: key_xy_13 { x = <19>; y = <19>; };
+    key_xy_14: key_xy_14 { x = <38>; y = <19>; };
+    key_xy_15: key_xy_15 { x = <57>; y = <19>; };
+    key_xy_16: key_xy_16 { x = <76>; y = <19>; };
+    key_xy_17: key_xy_17 { x = <95>; y = <19>; };
+    key_xy_18: key_xy_18 { x = <114>; y = <19>; };
+    key_xy_19: key_xy_19 { x = <133>; y = <19>; };
+    key_xy_20: key_xy_20 { x = <152>; y = <19>; };
+    key_xy_21: key_xy_21 { x = <171>; y = <19>; };
+    key_xy_22: key_xy_22 { x = <190>; y = <19>; };
+    key_xy_23: key_xy_23 { x = <209>; y = <19>; };
+    key_xy_24: key_xy_24 { x = <0>; y = <38>; };
+    key_xy_25: key_xy_25 { x = <19>; y = <38>; };
+    key_xy_26: key_xy_26 { x = <38>; y = <38>; };
+    key_xy_27: key_xy_27 { x = <57>; y = <38>; };
+    key_xy_28: key_xy_28 { x = <76>; y = <38>; };
+    key_xy_29: key_xy_29 { x = <95>; y = <38>; };
+    key_xy_30: key_xy_30 { x = <114>; y = <38>; };
+    key_xy_31: key_xy_31 { x = <133>; y = <38>; };
+    key_xy_32: key_xy_32 { x = <152>; y = <38>; };
+    key_xy_33: key_xy_33 { x = <171>; y = <38>; };
+    key_xy_34: key_xy_34 { x = <190>; y = <38>; };
+    key_xy_35: key_xy_35 { x = <209>; y = <38>; };
+    key_xy_36: key_xy_36 { x = <0>; y = <57>; };
+    key_xy_37: key_xy_37 { x = <19>; y = <57>; };
+    key_xy_38: key_xy_38 { x = <38>; y = <57>; };
+    key_xy_39: key_xy_39 { x = <57>; y = <57>; };
+    key_xy_40: key_xy_40 { x = <76>; y = <57>; };
+    key_xy_41: key_xy_41 { x = <95>; y = <57>; };
+    key_xy_42: key_xy_42 { x = <114>; y = <57>; };
+    key_xy_43: key_xy_43 { x = <133>; y = <57>; };
+    key_xy_44: key_xy_44 { x = <152>; y = <57>; };
+    key_xy_45: key_xy_45 { x = <171>; y = <57>; };
+    key_xy_46: key_xy_46 { x = <190>; y = <57>; };
+    key_xy_47: key_xy_47 { x = <209>; y = <57>; };
+
     physical_layout: physical_layout {
         compatible = "zmk,physical-layout";
-        display-name = "My48 Keyboard";  // ✨ 核心修复：在这里加上了 display-name
+        display-name = "My48 Keyboard";
         transform = <&default_transform>;
         kscan = <&kscan0>;
+        keys = <
+            &key_xy_0 &key_xy_1 &key_xy_2 &key_xy_3 &key_xy_4 &key_xy_5 &key_xy_6 &key_xy_7 &key_xy_8 &key_xy_9 &key_xy_10 &key_xy_11
+            &key_xy_12 &key_xy_13 &key_xy_14 &key_xy_15 &key_xy_16 &key_xy_17 &key_xy_18 &key_xy_19 &key_xy_20 &key_xy_21 &key_xy_22 &key_xy_23
+            &key_xy_24 &key_xy_25 &key_xy_26 &key_xy_27 &key_xy_28 &key_xy_29 &key_xy_30 &key_xy_31 &key_xy_32 &key_xy_33 &key_xy_34 &key_xy_35
+            &key_xy_36 &key_xy_37 &key_xy_38 &key_xy_39 &key_xy_40 &key_xy_41 &key_xy_42 &key_xy_43 &key_xy_44 &key_xy_45 &key_xy_46 &key_xy_47
+        >;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        caps_lock_led: led_0 {
+            gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+        };
+        bt_led: led_1 {
+            gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+        };
+    };
+
+    led_indicators {
+        compatible = "zmk,led-indicators";
+        bt_indicator: led_indicator_0 {
+            compatible = "zmk,led-indicator";
+            led = <&bt_led>;
+            triggers {
+                bt_connected: trigger_0 {
+                    trigger = "ZMK_LED_INDICATOR_TRIGGER_BT_CONNECTED";
+                    led-state = <1>;
+                };
+                bt_disconnected: trigger_1 {
+                    trigger = "ZMK_LED_INDICATOR_TRIGGER_BT_DISCONNECTED";
+                    led-state = <0>;
+                };
+                bt_advertising: trigger_2 {
+                    trigger = "ZMK_LED_INDICATOR_TRIGGER_BT_ADVERTISING";
+                    led-state = <2>;
+                };
+            };
+        };
     };
 
     chosen {
