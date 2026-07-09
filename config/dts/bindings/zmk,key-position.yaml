@@ -1,0 +1,17 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Key position for ZMK physical layout
+
+compatible: "zmk,key-position"
+
+properties:
+  x:
+    type: int
+    required: true
+  y:
+    type: int
+    required: true
+  "#key-cells":
+    type: int
+    const: 0
