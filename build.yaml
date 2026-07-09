@@ -1,5 +1,4 @@
-# This file specifies which targets to build in Github Actions.
-# See https://zmk.dev/docs/customization/build-config for more information.
+# This file generates the GitHub Actions matrix.
 ---
 include:
   - board: nice_nano_v2
