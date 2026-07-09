@@ -12,6 +12,12 @@ properties:
   y:
     type: int
     required: true
+  width:
+    type: int
+    default: 1
+  height:
+    type: int
+    default: 1
   "#key-cells":
     type: int
-    const: 0
+    const: 4
