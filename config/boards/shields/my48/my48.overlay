@@ -135,9 +135,9 @@
         bt_connected {
             leds = <&bt_status_led>;
             indicator = <HID_INDICATOR_CAPS_LOCK>;
-            active-brightness = <0>;
-            inactive-brightness = <0>;
-            disconnected-brightness = <100>;
+            active-brightness = <100>;
+            inactive-brightness = <100>;
+            disconnected-brightness = <0>;
         };
     };
 
