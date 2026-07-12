@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/zmk/hid_indicators.h>
 
 / {
     kscan0: kscan {
@@ -107,11 +108,24 @@
 
     leds {
         compatible = "gpio-leds";
-        caps_lock_led: led_0 {
+        caps_lock_led: caps_lock_led {
             gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
         };
-        bt_led: led_1 {
+        bt_led: bt_led {
             gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+        };
+    };
+
+    caps_lock_indicator {
+        compatible = "zmk,indicator-leds";
+        status = "okay";
+
+        caps_lock_led {
+            leds = <&caps_lock_led>;
+            indicator = <HID_INDICATOR_CAPS_LOCK>;
+            active-brightness = <100>;
+            inactive-brightness = <0>;
+            disconnected-brightness = <50>;
         };
     };
 
