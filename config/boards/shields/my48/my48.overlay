@@ -130,6 +130,7 @@
             active-brightness = <100>;
             inactive-brightness = <0>;
             disconnected-brightness = <0>;
+            on-while-idle;
         };
 
         bt_connected {
@@ -138,6 +139,7 @@
             active-brightness = <100>;
             inactive-brightness = <100>;
             disconnected-brightness = <0>;
+            on-while-idle;
         };
     };
 
