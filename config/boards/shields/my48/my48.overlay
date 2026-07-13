@@ -132,12 +132,17 @@
             disconnected-brightness = <0>;
             on-while-idle;
         };
+    };
+
+    ble_indicator {
+        compatible = "zmk,indicator-leds";
+        status = "okay";
 
         bt_connected {
             leds = <&bt_status_led>;
-            indicator = <HID_INDICATOR_CAPS_LOCK>;
+            indicator = <HID_INDICATOR_BLE>;
             active-brightness = <100>;
-            inactive-brightness = <100>;
+            inactive-brightness = <0>;
             disconnected-brightness = <0>;
             on-while-idle;
         };
